@@ -8,3 +8,5 @@ Get-MSOLUSer -UnlicensedUsersOnly | Where {$_.UserPrincipalName -notlike '*sync*
 # PS O365 - User PW Change Audit
 Get-MsolUser -All | Where {$_.isLicensed -eq $True -And $_.LastPasswordChangeTimeStamp -lt (Get-Date).AddMonths(-#)} | Sort LastPasswordChangeTimeStamp | Select DisplayName,isLicensed,Licenses,LastPasswordChangeTimeStamp | Out-Gridview
 
+# List Blocked users w/ Pertinent Info:
+Get-MSOLUser -All | Where {$_.BlockCredential -eq $True} | Where {$_.DisplayName -notlike '*directory*'} | Sort WhenCreated -Descending | FT DisplayName,UserPrincipalName,BlockCredential,isLicensed,WhenCreated
