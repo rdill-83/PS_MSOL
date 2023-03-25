@@ -14,3 +14,7 @@ Get-MSOLUser -All | Where {$_.isLicensed -eq $True} | Where {$_.UsageLocation -e
 
 *Validate "No Location Users" Aren't Licensed
 Get-MSOLUser -All | Where {$_.UsageLocation -eq $null} | FT UserPrincipalName,isLicensed,Licenses,WhenCreated
+
+
+# Set User Location - Basic:
+Set-MSOLUser -UserPrincipalName USERNAME@DOMAIN.COM -UsageLocation "US"
