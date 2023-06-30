@@ -1,17 +1,22 @@
-# Disable MSOL Directory Syncrhonization
+## Disable MSOL Directory Syncrhonization
 
-# Disables AzureAD Connect Syncrhonization MSOL / AzureAD side
+### Disables AzureAD Connect Syncrhonization MSOL / AzureAD side
 
-# View AzureAD Connect Syncrhonization State:
+### View AzureAD Connect Syncrhonization State:
+```
 (Get-MSOLCompanyInformation).DirectorySynchronizationEnabled
+```
 
-# Disable AzureAD Connect Sync - MSOL / AzureAD Side:
+### Disable AzureAD Connect Sync - MSOL / AzureAD Side:
+```
 Set-MSOLDirSyncEnabled -EnableDIRSync $False
+```
 
-# Enable AzureAD Connect Sync - MSOL / AzureAD Side:
-# Set-MSOLDirSyncEnabled -EnableDirSync $True
+### Enable AzureAD Connect Sync - MSOL / AzureAD Side:
+``` 
+Set-MSOLDirSyncEnabled -EnableDirSync $True
+```
 
 
-
-# Source:
+### Source:
 https://www.cloudcompute.info/how-to-remove-microsoft-azure-ad-connect-using-powershell/
