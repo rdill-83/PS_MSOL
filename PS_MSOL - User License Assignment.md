@@ -1,6 +1,6 @@
 ## PS O365 - Assign User License
 
-#### (Use Get-MSOLAccountSKU to retrieve the "AccountSkuID")
+#### (Use ``` Get-MSOLAccountSKU to retrieve the "AccountSkuID" ```)
 
 ### Assign User O365 Lic CMDLET:
 ```
@@ -24,7 +24,7 @@ $AllUn = Get-MsolUser -All -UnlicensedUsersOnly; $AllUn | foreach {Set-MsolUserL
 ```
 
 
-#### *Note - If PS "Bleeds Red" due to No Location 
+### *Note - If PS "Bleeds Red" due to No Location 
 ```
 Set-MSOLUser -USerPrincipalName USERNAME@DOMAIN.COM -UsageLocation "US"
 ```
